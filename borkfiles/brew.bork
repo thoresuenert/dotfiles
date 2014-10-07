@@ -6,6 +6,7 @@ bake brew tap homebrew/dupes
 
 # Install formulae
 ok brew git
+ok brew bash-completion
 ok brew ack
 ok brew hub
 ok brew node
