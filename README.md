@@ -5,15 +5,11 @@ dotfiles
 
 * Dotfile wrapper based on [Bork](https://github.com/mattly/bork)
 * Commented configuration options, so you know what is actually going on
-* Theme support for your prompts based on [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/)
 * Lightweight Atom package installer which uses a bundle [Atomfile](opt/Atomfile) (and `apm` of course)
-* [Powerline](https://github.com/Lokaltog/powerline) in Vim and Tmux
-* [zsh-autosuggestions](https://github.com/tarruda/zsh-autosuggestions) ZSH plugin
-* [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) ZSH plugin
 
 ### Installation
 
-1. `git clone https://github.com/frdmn/dotfiles $HOME/.dotfiles`
+1. `git clone https://github.com/marian/dotfiles $HOME/.dotfiles`
 2. `cd $HOME/.dotfiles`
 3. `./dotfiles`
 
@@ -51,13 +47,9 @@ Explanation of the directories:
 ./opt
 └── Specific files which gets symlinked into non-$HOME folders. Used by
     atom.bork
-
-./zsh
-└── ZSH dependencies and plugins like the prompt, the zsh-syntax-highlighting.
-    This folder gets symlinked into $HOME/.zsh and is used in ./configs/zshrc
 ```
 
 ### Credits
 
 * [Kasperisager](https://github.com/kasperisager), for the idea with Bork
-* [Robby Russell](https://github.com/robbyrussell), for oh-my-zsh's theme support
+* [FRDMN](https://github.com/frdmn), for making me do this shit! <3
