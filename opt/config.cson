@@ -1,13 +1,36 @@
+'editor':
+  'softWrap': true
+  'preferredLineLength': 1
+  'invisibles': {}
+'core':
+  'themes': [
+    'neutron-ui'
+    'neutron-syntax'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+  'disabledPackages': [
+    'atom-alignment'
+    'atom-color-highlight'
+  ]
 'exception-reporting':
-  'userId': 'f637adea-1050-8ece-429a-1a2be9ddef08'
+  'userId': '7b5e9cc8-5e80-0adb-becc-f7440823c7d3'
+'release-notes':
+  'viewedVersion': '0.60.0'
 'welcome':
   'showOnStartup': false
 'metrics':
-  'userId': 'a3d0e1b721f417804bf9c8a098629757bafe5628'
-'core':
-  'themes': [
-    'spacegray-dark-ui'
-    'spacegray-dark-syntax'
-  ]
-'editor':
-  'tabLength': 4
+  'userId': 'dfdcf7a9edf0c25603df4e067dca3e87503ad0fb'
+'atom-beautify':
+  '_analyticsUserId': 'a16214ef-4e66-4cbd-91a1-69c2d1f6bfca'
+'file-types':
+  'html5': 'text.html.php'
+'sync-settings':
+  'personalAccessToken': '9e6dc66141701f786e1c9420806add0f1c804447'
+  'gistId': 'ed4fd3a22dc439e11c1d'
+'highlight-line':
+  'underline':
+    'solid': false
