@@ -20,5 +20,4 @@ case $OSTYPE in
 esac
 
 # Dependant on above
-include zsh.bork
 include npm.bork
