@@ -5,7 +5,6 @@ ok npm npm
 ok npm bower
 ok npm grunt-cli
 ok npm yo
-ok npm hubot
 ok npm prettyjson
 ok npm hicat
 ok npm localtunnel
