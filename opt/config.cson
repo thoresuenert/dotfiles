@@ -1,7 +1,6 @@
 'editor':
   'softWrap': true
   'preferredLineLength': 1
-  'invisibles': {}
 'core':
   'themes': [
     'neutron-ui'
@@ -34,3 +33,5 @@
 'highlight-line':
   'underline':
     'solid': false
+'tree-view':
+  'hideVcsIgnoredFiles': true

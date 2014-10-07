@@ -11,14 +11,13 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
-# Tab completition
-[ -f ~/.git-bash-completion.sh ] && . ~/.git-bash-completion.sh
+# Git completition
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+. `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
 
-# Tab completition
-[ -f ~/.git-completion.bash ] && . ~/.git-completion.bash
-
-# Tab completition
-[ -f ~/z.sh ] && . ~/z.sh
+# z.sh
+[ -f ~/.z-sh/z.sh ] && . ~/.z-sh/z.sh
 
 # Case insensitive tab completition
 bind "set completion-ignore-case on"

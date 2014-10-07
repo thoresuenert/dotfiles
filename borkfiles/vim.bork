@@ -1,8 +1,8 @@
-# Check if Atom directory exists
+# Check if vim directory exists
 ok directory ${HOME}/.vim
 ok directory ${HOME}/.vim/colors
 
-# Check if symlink for Atom config exists
+# Check if jellybeans colorscheme exists
 if [[ ! -f ${HOME}/.vim/colors/jellybeans.vim ]]; then
 		echo "missing: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
 		wget https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -O ${HOME}/.vim/colors/jellybeans.vim
