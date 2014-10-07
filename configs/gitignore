@@ -1,0 +1,6 @@
+.DS_Store
+*.esproj
+*.esproj/
+.extra
+*.sublime-project
+*.sublime-workspace

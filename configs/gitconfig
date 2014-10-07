@@ -22,9 +22,6 @@
 [core]
 	quotepath = false
 	excludesfile = /Users/mfr/.gitignore
-[github]
-	user = rnarian
-	token = 1c33d7baeb13304a4ed1147526a835aa
 [color]
 	ui = true
 	branch = auto
