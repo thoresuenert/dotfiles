@@ -1,9 +1,12 @@
-# Check if powerline is installed
-package="git+git://github.com/Lokaltog/powerline"
-if pip list | grep "Powerline" &> /dev/null; then
-	echo "ok: pip ${package}";
+# Check if Atom directory exists
+ok directory ${HOME}/.vim
+ok directory ${HOME}/.vim/colors
+
+# Check if symlink for Atom config exists
+if [[ ! -f ${HOME}/.vim/colors/jellybeans.vim ]]; then
+		echo "missing: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
+		wget https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -O ${HOME}/.vim/colors/jellybeans.vim
+		echo "ok: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
 else
-	echo "missing: pip ${package}";
-	bake pip install git+git://github.com/Lokaltog/powerline	
-	echo "ok: pip ${package}";
+		echo "ok: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
 fi
