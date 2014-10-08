@@ -1,6 +1,7 @@
 'editor':
   'softWrap': true
   'preferredLineLength': 1
+  'invisibles': {}
 'core':
   'themes': [
     'neutron-ui'
