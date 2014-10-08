@@ -11,6 +11,16 @@ else
     echo "ok: symlink ~/.atom/config.cson"
 fi
 
+# Check if symlink for Atom custom style exists
+if [[ ! -h ${HOME}/.atom/style.less ]]; then
+    echo "missing: symlink ~/.atom/style.less"
+    rm $HOME/.atom/style.less &> /dev/null
+    ln -sf ${HOME}/.dotfiles/opt/style.less ${HOME}/.atom/style.less
+    echo "ok: symlink ~/.atom/style.less"
+else
+    echo "ok: symlink ~/.atom/style.less"
+fi
+
 #
 # Install packages in Atomfile
 #
