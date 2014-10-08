@@ -11,6 +11,7 @@ ok cask google-chrome-dev
 ok cask gpgtools
 ok cask hazel
 ok cask macdown
+ok cask alfred
 ok cask onepassword
 ok cask virtualbox
 ok cask vlc
