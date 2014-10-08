@@ -30,3 +30,10 @@ dataurl() {
 	echo "data:image/${1##*.};base64,$(openssl base64 -in "$1")" | tr -d '\n'
 }
 
+alias bork="${HOME}/.dotfiles/bork/bin/bork"
+
+dotfiles() {
+    cd ${HOME}/.dotfiles
+    ./dotfiles $1
+    cd -
+}
