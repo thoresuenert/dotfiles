@@ -1,7 +1,6 @@
 'editor':
   'softWrap': true
-  'preferredLineLength': 1,
-  'fontSize': 16,
+  'preferredLineLength': 1
   'invisibles': {}
 'core':
   'themes': [
