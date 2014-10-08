@@ -15,6 +15,7 @@ ok cask dropbox
 ok cask sequel-pro
 ok cask nvalt
 ok cask sketch
+ok cask appcleaner
 ok cask onepassword
 ok cask virtualbox
 ok cask vlc
