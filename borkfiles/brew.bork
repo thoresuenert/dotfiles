@@ -20,6 +20,7 @@ ok brew youtube-dl
 ok brew heroku-toolbelt
 ok brew tmux
 ok brew terminal-notifier
+ok brew mysql
 ok brew go
 
 # Cleanup
