@@ -14,6 +14,13 @@ ok defaults -g NSAutomaticQuoteSubstitutionEnabled bool false
 # Disable smart dashes as they’re annoying when typing code
 ok defaults -g NSAutomaticDashSubstitutionEnabled bool false
 
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
