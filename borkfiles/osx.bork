@@ -88,7 +88,7 @@ ok defaults com.apple.finder FXPreferredViewStyle string "Nlsv"
 ok defaults com.apple.finder WarnOnEmptyTrash bool false
 
 # Set sidebar icon size to small
-ok defaults NSGlobalDomain NSTableViewDefaultSizeMode int 1
+ok defaults NSGlobalDomain NSTableViewDefaultSizeMode integer 1
 
 ###############################################################################
 # Dock and Dashboard                                                          #
