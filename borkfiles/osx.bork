@@ -21,7 +21,8 @@ defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 bool true
 # Save to disk (not to iCloud) by default
 defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
 
-
+# Increase sound quality for Bluetooth headphones/headsets
+defaults com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" int 40
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
