@@ -80,6 +80,9 @@ ok defaults com.apple.finder FXPreferredViewStyle string "Nlsv"
 # Disable the warning before emptying the Trash
 ok defaults com.apple.finder WarnOnEmptyTrash bool false
 
+# Set sidebar icon size to small
+ok defaults NSGlobalDomain NSTableViewDefaultSizeMode int 1
+
 ###############################################################################
 # Dock and Dashboard                                                          #
 ###############################################################################
