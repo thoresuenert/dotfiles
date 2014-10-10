@@ -15,11 +15,13 @@ ok defaults -g NSAutomaticQuoteSubstitutionEnabled bool false
 ok defaults -g NSAutomaticDashSubstitutionEnabled bool false
 
 # Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode bool true
+defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 bool true
 
 # Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
+
+
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
