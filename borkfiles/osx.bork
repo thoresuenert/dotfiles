@@ -15,14 +15,11 @@ ok defaults -g NSAutomaticQuoteSubstitutionEnabled bool false
 ok defaults -g NSAutomaticDashSubstitutionEnabled bool false
 
 # Expand save panel by default
-defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode bool true
-defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 bool true
+ok defaults -g NSNavPanelExpandedStateForSaveMode bool true
+ok defaults -g NSNavPanelExpandedStateForSaveMode2 bool true
 
 # Save to disk (not to iCloud) by default
-defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
-
-# Increase sound quality for Bluetooth headphones/headsets
-defaults com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" int 40
+ok defaults -g NSDocumentSaveNewDocumentsToCloud bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
