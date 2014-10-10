@@ -93,6 +93,9 @@ ok defaults com.apple.dock mru-spaces bool false
 # Reset LaunchPad at each login
 ok defaults com.apple.dock ResetLaunchPad bool true
 
+# Speed up mission control animations
+ok defaults com.apple.dock expose-animation-duration float 0.15
+
 ###############################################################################
 # Mail                                                                        #
 ###############################################################################
