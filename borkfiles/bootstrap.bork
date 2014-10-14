@@ -13,6 +13,7 @@ case $OSTYPE in
   darwin*)
     include brew.bork
     include cask.bork
+    include macstore.bork
     include osx.bork
     include atom.bork
     ;;
