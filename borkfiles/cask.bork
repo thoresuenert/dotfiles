@@ -9,7 +9,6 @@ ok brew brew-cask
 ok cask atom
 ok cask google-chrome-dev
 ok cask gpgtools
-ok cask macdown
 ok cask alfred
 ok cask dropbox
 ok cask sequel-pro
