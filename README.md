@@ -42,7 +42,7 @@ Explanation of the directories:
 
 ./configs
 └── Contains all of your configuration files which gets symlinked into $HOME
-    as ".$FILE". So basically, your actual dotfiles (zshrc, vimrc, gitconfig)
+    as ".$FILE". So basically, your actual dotfiles (vimrc, gitconfig, etc)
 
 ./opt
 └── Specific files which gets symlinked into non-$HOME folders. Used by
