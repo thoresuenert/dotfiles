@@ -139,8 +139,6 @@ ok defaults com.apple.TimeMachine DoNotOfferNewDisksForBackup bool true
 
 # Note that some of these changes require a logout/restart to take effect.
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
-	"Terminal" "Transmission" "Twitter" "iCal"; do
+for app in "Dock" "Finder" "Safari" "SystemUIServer"; do
 	killall "${app}" > /dev/null 2>&1
 done
