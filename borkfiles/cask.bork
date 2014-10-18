@@ -17,6 +17,7 @@ ok cask appcleaner
 ok cask scrup
 ok cask virtualbox
 ok cask vlc
+ok cask mailbox
 
 # Cleanup
 bake brew cleanup
