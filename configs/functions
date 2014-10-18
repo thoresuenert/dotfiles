@@ -32,4 +32,6 @@ dataurl() {
 
 alias bork="${HOME}/.dotfiles/bork/bin/bork"
 
-function dotfiles(){cd ~/.dotfiles; ./dotfiles $1; cd - > /dev/null}
+function dotfiles() {
+	cd ~/.dotfiles; ./dotfiles $1; cd - > /dev/null
+}
