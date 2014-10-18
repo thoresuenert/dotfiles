@@ -134,11 +134,11 @@ ok defaults NSGlobalDomain WebKitDeveloperExtras bool true
 ok defaults com.apple.TimeMachine DoNotOfferNewDisksForBackup bool true
 
 ###############################################################################
-# Kill affected applications                                                  #
+# Kill Dock, Finder & SystemUIServer                                          #
 ###############################################################################
 
 # Note that some of these changes require a logout/restart to take effect.
 
-for app in "Dock" "Finder" "Safari" "SystemUIServer"; do
+for app in "Dock" "Finder" "SystemUIServer"; do
 	killall "${app}" > /dev/null 2>&1
 done
