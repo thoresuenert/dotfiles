@@ -21,6 +21,7 @@ ok brew heroku-toolbelt
 ok brew tmux
 ok brew mysql
 ok brew go
+ok brew z
 
 # Cleanup
 bake brew cleanup
