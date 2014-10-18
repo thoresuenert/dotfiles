@@ -6,6 +6,18 @@ for file in ~/.{bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# Per hostname
+
+if [ -f ${HOME}/.dotfiles/hostnames/${HOSTNAME} ]; then
+	. ${HOME}/.dotfiles/hostnames/${HOSTNAME}
+fi
+
+# Vault (not included in git repo)
+
+if [ -f ${HOME}/.bash_vault ]; then
+	. ${HOME}/.bash_vault
+fi
+
 # Bash completition
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion

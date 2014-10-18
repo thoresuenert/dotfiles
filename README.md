@@ -1,17 +1,25 @@
 dotfiles
 ========
 
-[Bork](https://github.com/mattly/bork)-based dotfile setup for Mac and Linux systems.
+[Bork](https://github.com/mattly/bork)-based dotfile setup for Mac and Linux systems which is really simple and easy to understand.
+
+### Features
 
 * Dotfile wrapper based on [Bork](https://github.com/mattly/bork)
+* Brew and Cask package check
+* Mac App Store app check
+* `npm` (Node Package Manager) package check
+* `apt-get` package check
 * Commented configuration options, so you know what is actually going on
 * Lightweight Atom package installer which uses a bundle [Atomfile](opt/Atomfile) (and `apm` of course)
+* Dotfiles per hostname
 
 ### Installation
 
-1. `git clone https://github.com/marian/dotfiles $HOME/.dotfiles`
-2. `cd $HOME/.dotfiles`
-3. `./dotfiles`
+1. Fork this repository
+2. `git clone https://github.com/<GitHub-user>/dotfiles $HOME/.dotfiles`
+3. `cd $HOME/.dotfiles`
+4. `./dotfiles`
 
 ### Available commands
 
@@ -44,6 +52,14 @@ Explanation of the directories:
 └── Contains all of your configuration files which gets symlinked into $HOME
     as ".$FILE". So basically, your actual dotfiles (vimrc, gitconfig, etc)
 
+./configs/bash_vault
+└── Secret stuff that you rather don't track in the git repo
+
+./hostnames
+└── This folder could contain hostname specific (per host) dotfiles which get
+    sourced by your Bash/ZSH shell only if there is a file that matches our
+    current full (`$HOSTNAME`) hostname.
+
 ./opt
 └── Specific files which gets symlinked into non-$HOME folders. Used by
     atom.bork
@@ -53,3 +69,7 @@ Explanation of the directories:
 
 * [Kasperisager](https://github.com/kasperisager), for the idea with Bork
 * [FRDMN](https://github.com/frdmn), for making me do this shit! <3
+
+### License
+
+[WTFPL](LICENSE)

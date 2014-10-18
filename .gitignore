@@ -1,2 +1,8 @@
 # bork
 bork
+
+# Mac meta
+.DS_Store
+
+# Bash vault
+configs/bash_vault
