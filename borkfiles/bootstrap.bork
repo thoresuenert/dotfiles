@@ -19,6 +19,6 @@ case $OSTYPE in
     include apt.bork
 esac
 
-# Dependant on above
+# Depending on above
 include npm.bork
 include vim.bork
