@@ -17,7 +17,7 @@ if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
 fi
 
 # z.sh
-[ -f ~/.z-sh/z.sh ] && . ~/.z-sh/z.sh
+[ -f `brew --prefix`/etc/profile.d/z.sh ] && . `brew --prefix`/etc/profile.d/z.sh
 
 # Case insensitive tab completition
 bind "set completion-ignore-case on"
