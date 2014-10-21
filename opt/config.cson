@@ -3,7 +3,6 @@
     'softWrap': true
     'preferredLineLength': 1
     'fontSize': 18
-    'invisibles': {}
   'core':
     'themes': [
       'neutron-ui'
