@@ -1,6 +1,5 @@
 atom-beautify
 atom-color-highlight
-autocomplete-paths
 autocomplete-plus
 bezier-curve-editor
 brogrammer-ui
@@ -11,10 +10,7 @@ emmet
 file-icons
 file-types
 git-history
-grunt-runner
 highlight-line
-jumpy
-merge-conflicts
 monokai
 neutron-syntax
 neutron-ui
