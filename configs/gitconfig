@@ -17,11 +17,11 @@
 	oops = commit --amend
   pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 [user]
-	email = marian@ideenfrische.de
-	name = Marian Friedmann
+  name = Johannes Rückert
+  email = rawbauke@gmail.com
 [core]
 	quotepath = false
-	excludesfile = /Users/mfr/.gitignore
+	excludesfile = /Users/johannes/.gitignore
 [color]
 	ui = true
 	branch = auto
