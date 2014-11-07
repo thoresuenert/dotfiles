@@ -1,12 +1,15 @@
 # Check if vim directory exists
 ok directory ${HOME}/.vim
-ok directory ${HOME}/.vim/colors
+ok directory ${HOME}/.vim/bundle
 
-# Check if jellybeans colorscheme exists
-if [[ ! -f ${HOME}/.vim/colors/jellybeans.vim ]]; then
-		echo "missing: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
-		wget https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -O ${HOME}/.vim/colors/jellybeans.vim
-		echo "ok: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
+# Check if vundle colorscheme exists
+if [[ ! -d ${HOME}/.vim/bundle/Vundle.vim ]]; then
+		echo "missing: vundle package manager ~/.vim/bundle/Vundle.vim"
+		git clone git@github.com:gmarik/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+		echo "ok: vundle package manager ~/.vim/bundle/Vundle.vim"
 else
-		echo "ok: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
+		echo "ok: vundle package manager ~/.vim/bundle/Vundle.vim"
 fi
+
+# on first run:
+# Vim -> BundleInstall
