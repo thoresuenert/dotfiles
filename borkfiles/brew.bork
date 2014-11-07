@@ -7,7 +7,7 @@ bake brew tap homebrew/dupes 2>/dev/null
 # Install formula
 ok brew git
 ok brew bash-completion
-ok brew ack
+ok brew ag
 ok brew hub
 ok brew node
 ok brew vim
