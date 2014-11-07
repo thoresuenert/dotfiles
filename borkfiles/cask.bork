@@ -17,7 +17,6 @@ ok cask appcleaner
 ok cask fileshuttle
 ok cask virtualbox
 ok cask vlc
-ok cask mailbox
 
 # Quick Look plugins - https://github.com/sindresorhus/quick-look-plugins
 ok cask qlcolorcode
