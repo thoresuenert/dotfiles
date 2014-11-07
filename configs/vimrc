@@ -1,7 +1,7 @@
 set nocompatible
 
 " Leader
-let mapleader = ","
+let mapleader = " "
 
 " Settings
 set nobackup
@@ -21,14 +21,19 @@ set wrap
 set linebreak
 
 " Search
-set hlsearch
+set nohlsearch
 set ignorecase
+set smartcase
 set incsearch
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
+endif
+
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
 endif
 
 augroup vimrcEx
@@ -96,8 +101,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+" Making j and k work on wrapped lines
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
 
 " =======================================
 " Searching in Files
@@ -126,8 +134,16 @@ nnoremap \ :Ag<SPACE>
 " Statusline Config
 " =======================================
 set statusline=%f
+set statusline+=%{fugitive#statusline()}\
 set statusline+=\ [line\ %l\/%L]
 set statusline+=%m
+
+" =======================================
+" ColorColumn Config
+" =======================================
+if exists("+colorcolumn")
+  set colorcolumn=81
+endif
 
 " =======================================
 " Bundle Config
@@ -139,7 +155,96 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss EmmetInstall
 
 " Colorscheme
+" Background transparent please
+let g:jellybeans_background_color_256='NONE'
+colorscheme jellybeans
+
+
+" ==================================================================================
+
+" Colorscheme
+" Background transparent please
+let g:jellybeans_background_color_256='NONE'
 colorscheme jellybeans
 
 " Mappings
 nnoremap <leader><space> :noh<cr>
+
+" Tweak to use unnamed clipboard (for tmux)
+set clipboard=unnamed
+
+" Vim-airline
+" Vim-airline doesn't appear until I create a new split
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline_theme= "murmur"
+let g:airline_detect_whitespace=0
+
+" tmuxline
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#h',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a',
+      \'y'    : '#W %R',
+      \'z'    : '#h'}
+
+" use flavored-markdown by default
+augroup markdown
+      au!
+      au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" set height of preview-window (e.g. for fugitive etc)
+" default=12
+set previewheight=20
+
+" keymapping for NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Mappings to move lines up/down
+" funny looking characters are actually ALT+j & ALT+k
+" http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim
+" Normal mode
+nnoremap º :m .+1<CR>==
+nnoremap ∆ :m .-2<CR>==
+
+" Insert mode
+inoremap º <ESC>:m .+1<CR>==gi
+inoremap ∆ <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap º :m '>+1<CR>gv=gv
+vnoremap ∆ :m '<-2<CR>gv=gv
+
+" search in all files except for the ones in .agignore
+let g:ctrlp_user_command = 'ag %s -l -U --nocolor -g ""'
+
+" toggle paste mode
+set pastetoggle=<F2>
+
+" Multiple Cursor with CTRl-D
+let g:multi_cursor_next_key='<C-d>'
+
+" associate *.html5 with php filetype
+" e.g. Contao-Templates
+au BufRead,BufNewFile *.html5 set filetype=php
+
+let &colorcolumn=0
+
+" switching tabs
+map <C-u> <Esc>:tabprev<CR>
+map <C-i> <Esc>:tabnext<CR>
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
