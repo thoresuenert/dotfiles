@@ -178,7 +178,7 @@ autocmd FileType html,css,scss EmmetInstall
 
 " airline
 let g:airline_detect_whitespace=0             " disable whitespace extension
-let g:airline_theme='lucius'
+let g:airline_theme='ubaryd'
 let g:airline_left_sep=''                     " use 'straight' separators instead of < & > 
 let g:airline_right_sep=''
 
