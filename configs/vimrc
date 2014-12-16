@@ -172,7 +172,7 @@ nnoremap \ :Ag<SPACE>
 " =============================================================================
 
 " emmet
-let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_expandabbr_key = '€'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss EmmetInstall
 
