@@ -93,6 +93,9 @@ set linebreak                                 " linebreak on words
 augroup vimrcEx
   autocmd!
 
+  " tmuxline appearance
+  au VimEnter * Tmuxline vim_statusline_1
+
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
@@ -106,11 +109,12 @@ augroup vimrcEx
   au BufNewFile,BufRead *.json set filetype=javascript
   au BufNewFile,BufRead *.html5 set filetype=php
 
+
 augroup END
 
 
 " =============================================================================
-" Navigation
+" Mappings
 " =============================================================================
 
 " Quicker window movement
@@ -141,6 +145,10 @@ inoremap ∆ <ESC>:m .-2<CR>==gi
 " in Visual mode
 vnoremap º :m '>+1<CR>gv=gv
 vnoremap ∆ :m '<-2<CR>gv=gv
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 
 
 " =============================================================================
@@ -178,7 +186,7 @@ autocmd FileType html,css,scss EmmetInstall
 
 " airline
 let g:airline_detect_whitespace=0             " disable whitespace extension
-let g:airline_theme='ubaryd'
+let g:airline_theme='raven'
 let g:airline_left_sep=''                     " use 'straight' separators instead of < & > 
 let g:airline_right_sep=''
 
