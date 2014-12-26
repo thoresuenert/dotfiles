@@ -93,8 +93,12 @@ set linebreak                                 " linebreak on words
 augroup vimrcEx
   autocmd!
 
-  " tmuxline appearance
-  au VimEnter * Tmuxline vim_statusline_1
+  " set tmuxline appearance
+  " only if inside a tmux-session
+  " otherwise $TERM would equal 'xterm-256color'
+  if $TERM == 'screen-256color'
+    au VimEnter * Tmuxline vim_statusline_1
+  endif
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
