@@ -20,7 +20,7 @@ alias s="cd ~/Sites"
 
 # Lists & Directorys
 alias ls="ls -G"
-alias ll="ls -al"
+alias ll="ls -ahl"
 alias lsd='ls -l | grep "^d"'
 
 # Apps
