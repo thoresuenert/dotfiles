@@ -1,60 +1,44 @@
-# borrowed from https://github.com/gf3/dotfiles
-# + small changes (break removed)
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-	export TERM=gnome-256color
-elif infocmp xterm-256color >/dev/null 2>&1; then
-	export TERM=xterm-256color
-fi
+# borrowed and modified from https://gist.github.com/tobiassjosten/828432 
 
-if tput setaf 1 &> /dev/null; then
-	tput sgr0
-	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-		MAGENTA=$(tput setaf 9)
-		ORANGE=$(tput setaf 172)
-		GREEN=$(tput setaf 190)
-		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 256)
-	else
-		MAGENTA=$(tput setaf 5)
-		ORANGE=$(tput setaf 4)
-		GREEN=$(tput setaf 2)
-		PURPLE=$(tput setaf 1)
-		WHITE=$(tput setaf 7)
-	fi
-	BOLD=$(tput bold)
-	RESET=$(tput sgr0)
+# Configure colors, if available.
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    c_reset='\[\e[0m\]'
+    c_path='\[\e[1;30m\]'
+    c_git_clean='\[\e[0;32m\]'
+    c_git_staged='\[\e[0;31m\]'
+    c_git_unstaged='\[\e[0;33m\]'
 else
-	MAGENTA="\033[1;31m"
-	ORANGE="\033[1;33m"
-	GREEN="\033[1;32m"
-	PURPLE="\033[1;35m"
-	WHITE="\033[1;37m"
-	BOLD=""
-	RESET="\033[m"
+    c_reset=
+    c_path=
+    c_git_clean=
+    c_git_staged=
+    c_git_unstaged=
 fi
 
-export MAGENTA
-export ORANGE
-export GREEN
-export PURPLE
-export WHITE
-export BOLD
-export RESET
-
-function parse_git_dirty() {
-	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+# Function to assemble the Git parsingart of our prompt.
+git_prompt ()
+{
+    GIT_DIR=`git rev-parse --git-dir 2>/dev/null`
+    if [ -z "$GIT_DIR" ]; then
+        return 0
+    fi
+    GIT_HEAD=`cat $GIT_DIR/HEAD`
+    GIT_BRANCH=${GIT_HEAD##*/}
+    if [ ${#GIT_BRANCH} -eq 40 ]; then
+        GIT_BRANCH="(no branch)"
+    fi
+    STATUS=`git status --porcelain`
+    if [ -z "$STATUS" ]; then
+        git_color="${c_git_clean}"
+    else
+        echo -e "$STATUS" | grep -q '^ [A-Z\?]'
+        if [ $? -eq 0 ]; then
+            git_color="${c_git_unstaged}"
+        else
+            git_color="${c_git_staged}"
+        fi
+    fi
+    echo ":$git_color$GIT_BRANCH$c_reset"
 }
 
-function parse_git_branch() {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-
-#export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
-#export PS2="\[$ORANGE\]→ \[$RESET\]"
-
-#export PS1="[\u\[$WHITE\]@\h:\[$GREEN\]\W\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]] $ \[$RESET\]"
-#export PS1="[\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]] $ \[$RESET\]"
-export PS1="▶ \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \":\")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
-
-# use login instead of su to prevent "sh: parse_git_branch: command not found" when logged in as root
-alias su="login root"
+PROMPT_COMMAND="$PROMPT_COMMAND PS1=\"${c_path}\w${c_reset}\$(git_prompt) \" ;"
