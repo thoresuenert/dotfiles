@@ -21,6 +21,7 @@ ok cask vlc
 # Quick Look plugins - https://github.com/sindresorhus/quick-look-plugins
 ok cask qlcolorcode
 ok cask qlstephen
+ok cask qlimagesize
 ok cask qlmarkdown
 ok cask quicklook-json
 ok cask qlprettypatch
