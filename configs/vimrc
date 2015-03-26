@@ -154,6 +154,9 @@ vnoremap ∆ :m '<-2<CR>gv=gv
 vnoremap < <gv
 vnoremap > >gv
 
+" Quickly get rid of search highlighting
+nnoremap <leader><leader> :noh<cr>
+
 
 " =============================================================================
 " Searching in Files with the Silver Searcher 
