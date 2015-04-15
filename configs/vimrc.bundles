@@ -35,7 +35,6 @@ Plugin 'terryma/vim-multiple-cursors'
 
 " navigation
 Plugin 'kien/ctrlp.vim'
-Plugin 'christoomey/vim-tmux-navigator'
 
 " git
 Plugin 'tpope/vim-fugitive'
