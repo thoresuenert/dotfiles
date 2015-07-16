@@ -1,7 +1,4 @@
-# PATH environment variable for use with MacPorts.
-export PATH=/usr/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:$PATH
-
-# ⌘c/⌘v from https://github.com/mathiasbynens/dotfiles
+# cmd+c cmd+v from https://github.com/mathiasbynens/dotfiles
 
 # Make vim the default editor
 export EDITOR="vim"

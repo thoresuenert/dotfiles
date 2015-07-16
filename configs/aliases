@@ -12,21 +12,9 @@ alias rm="rm -i"
 
 # Navigation
 alias ..="cd .."
-alias d="cd ~/Desktop"
-alias db="cd ~/Dropbox"
-alias h="cd ~"
-alias p="cd ~/Dropbox/Projects"
-alias s="cd ~/Sites"
 
 # Lists & Directorys
-alias ls="ls -G"
 alias ll="ls -ahl"
-alias lsd='ls -l | grep "^d"'
-
-# Apps
-alias kaboom="open -a Espresso"
-alias fire="open -a /Applications/Adobe\ Fireworks\ CS5.1/Adobe\ Fireworks\ CS5.1.app"
-alias sub="open -a /Applications/Sublime\ Text\ 2.app"
 
 # Git
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -34,29 +22,12 @@ alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset 
 # Various
 alias error_log="tail -250f /var/log/apache2/error_log"
 alias access_log="tail -250f /var/log/apache2/access_log"
-alias doing="cat ~/.doing | grep -m20 --color=always"
 
 #better grep
 alias grep="grep --color=always"
 
-# ⌘c/⌘v from https://github.com/mathiasbynens/dotfiles/
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
 # IP addresses
 alias ip="curl icanhazip.com"
-alias localip="ipconfig getifaddr en1"
-alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
-
-# Enhanced WHOIS lookups
-alias whois="whois -h whois-servers.net"
-
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache"
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
