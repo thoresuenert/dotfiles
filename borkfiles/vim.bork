@@ -1,22 +1,14 @@
 # Create required Vim directories
-ok directory $HOME/.vim/bundle
 ok directory $HOME/.vim/colors
 
 # get colorschemes (not using vundle to avoid error when installing) 
 destination $HOME/.vim/colors
 
-# Check if jellybeans colorscheme exists
-if [[ ! -f ${HOME}/.vim/colors/jellybeans.vim ]]; then
-		echo "missing: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
-		wget https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -O ${HOME}/.vim/colors/jellybeans.vim
-		echo "ok: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
+# Check if solarized colorscheme exists
+if [[ ! -f ${HOME}/.vim/colors/solarized.vim ]]; then
+		echo "missing: colorscheme solarized ~/.vim/colors/solarized.vim"
+		wget https://raw.githubusercontent.com/altercation/solarized/master/vim-colors-solarized/colors/solarized.vim -O ${HOME}/.vim/colors/solarized.vim
+		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
 else
-		echo "ok: colorscheme jellybeans ~/.vim/colors/jellybeans.vim"
-fi
-
-# get vundle
-destination $HOME/.vim/bundle
-ok github gmarik/Vundle.vim
-if did_update; then
-  (vim +PluginInstall! +qall)
+		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
 fi
