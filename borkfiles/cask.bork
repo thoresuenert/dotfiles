@@ -11,9 +11,10 @@ ok cask google-chrome
 ok cask alfred
 ok cask dropbox
 ok cask sequel-pro
-ok cask evernote
+ok cask nvalt
+ok cask keka
+ok cask numi
 ok cask appcleaner
-ok cask fileshuttle
 ok cask virtualbox
 ok cask vlc
 
