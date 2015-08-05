@@ -4,8 +4,5 @@ ok npm npm
 # Packages
 ok npm bower
 ok npm grunt-cli
-ok npm yo
 ok npm prettyjson
 ok npm hicat
-ok npm localtunnel
-ok npm keybase-installer

@@ -8,19 +8,13 @@ bake brew tap homebrew/dupes 2>/dev/null
 ok brew git
 ok brew bash-completion
 ok brew ag
-ok brew hub
 ok brew node
 ok brew vim
-ok brew pssh
 ok brew wget
 ok brew pv
 ok brew python
-ok brew youtube-dl
-ok brew heroku-toolbelt
 ok brew tmux
 ok brew mysql
-ok brew go
-ok brew z
 
 # Cleanup
 bake brew cleanup
