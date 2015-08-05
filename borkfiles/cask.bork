@@ -6,15 +6,19 @@ bake brew tap caskroom/versions 2>/dev/null
 ok brew brew-cask
 
 # Install desktop apps
-ok cask atom
-ok cask google-chrome
 ok cask alfred
-ok cask dropbox
-ok cask sequel-pro
-ok cask nvalt
-ok cask keka
-ok cask numi
 ok cask appcleaner
+ok cask atom
+ok cask dropbox
+ok cask flux
+ok cask google-chrome
+ok cask keka
+ok cask licecap
+ok cask numi
+ok cask nvalt
+ok cask sequel-pro
+ok cask vagrant
+ok cask vagrant-manager
 ok cask virtualbox
 ok cask vlc
 
