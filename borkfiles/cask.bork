@@ -6,6 +6,7 @@ bake brew tap caskroom/versions 2>/dev/null
 ok brew brew-cask
 
 # Install desktop apps
+ok cask 1password
 ok cask alfred
 ok cask appcleaner
 ok cask atom
