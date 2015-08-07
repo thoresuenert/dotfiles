@@ -9,6 +9,7 @@ ok brew brew-cask
 ok cask alfred
 ok cask appcleaner
 ok cask atom
+ok cask bartender
 ok cask dropbox
 ok cask flux
 ok cask google-chrome
@@ -31,7 +32,6 @@ ok cask quicklook-json
 ok cask qlprettypatch
 ok cask quicklook-csv
 ok cask betterzipql
-ok cask webp-quicklook
 ok cask suspicious-package
 
 # Cleanup
