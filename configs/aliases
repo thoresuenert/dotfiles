@@ -14,7 +14,7 @@ alias rm="rm -i"
 alias ..="cd .."
 
 # Lists & Directorys
-alias ll="ls -ahl"
+alias ll="ls -halG"
 
 # Git
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
