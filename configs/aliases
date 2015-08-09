@@ -12,6 +12,7 @@ alias rm="rm -i"
 
 # Navigation
 alias ..="cd .."
+alias o="open ."
 
 # Lists & Directorys
 alias ll="ls -halG"
