@@ -59,12 +59,6 @@ ok defaults -g AppleFontSmoothing integer 2
 # Finder                                                                      #
 ###############################################################################
 
-# Show icons for hard drives, servers, and removable media on the desktop
-ok defaults com.apple.finder ShowExternalHardDrivesOnDesktop bool true
-ok defaults com.apple.finder ShowHardDrivesOnDesktop bool true
-ok defaults com.apple.finder ShowMountedServersOnDesktop bool true
-ok defaults com.apple.finder ShowRemovableMediaOnDesktop bool true
-
 # Finder: show all filename extensions
 ok defaults -g AppleShowAllExtensions bool true
 
@@ -102,9 +96,6 @@ ok defaults com.apple.dock mru-spaces bool false
 
 # Reset LaunchPad at each login
 ok defaults com.apple.dock ResetLaunchPad bool true
-
-# Speed up mission control animations
-ok defaults com.apple.dock expose-animation-duration float 0.15
 
 ###############################################################################
 # Mail                                                                        #
