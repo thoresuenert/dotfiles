@@ -1,7 +1,7 @@
 # Create required Vim directories
 ok directory $HOME/.vim/colors
 
-# get colorschemes (not using vundle to avoid error when installing) 
+# get colorschemes
 destination $HOME/.vim/colors
 
 # Check if solarized colorscheme exists
@@ -11,4 +11,25 @@ if [[ ! -f ${HOME}/.vim/colors/solarized.vim ]]; then
 		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
 else
 		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
+fi
+
+# install plugins
+destination $HOME/.vim
+
+# ctrl-p
+if [[ ! -d ${HOME}/.vim/bundle/ctrlp.vim ]]; then
+		echo "missing: plugin - ctrl-p"
+        git clone https://github.com/kien/ctrlp.vim.git ${HOME}/.vim/bundle/ctrlp.vim
+		echo "ok: plugin - ctrl-p"
+else
+		echo "ok: plugin - ctrl-p"
+fi
+
+# ag
+if [[ ! -d ${HOME}/.vim/bundle/ag ]]; then
+		echo "missing: plugin - ag"
+        git clone https://github.com/rking/ag.vim ${HOME}/.vim/bundle/ag
+		echo "ok: plugin - ag"
+else
+		echo "ok: plugin - ag"
 fi
