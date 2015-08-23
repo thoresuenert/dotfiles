@@ -1,14 +1,19 @@
 " .vimrc
-" cmd+c cmd+v from
-" https://github.com/csswizardry/dotfiles/blob/master/.vimrc
+
+
+
+set noswapfile
+
+
 
 " No compatibility
 set nocompatible
 set encoding=utf-8
 
-" Use OS X clipboard
-set clipboard=unnamed
 
+
+" use OS X clipboard
+set clipboard=unnamed
 
 
 
@@ -23,11 +28,13 @@ set t_Co=256
 " Dark solarized scheme
 set background=dark
 colorscheme solarized
+call togglebg#map("<F12>")
+
 
 
 
 " Set relevant filetypes
-au BufRead,BufNewFile *.scss set filetype=css
+au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.md set filetype=markdown
 
 
@@ -35,11 +42,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Tabs, indentation and lines
 
 filetype plugin indent on
-" 4 spaces please
+" 2 spaces please
 set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 " Round indent to nearest multiple of 4
 set shiftround
 " No line-wrapping
@@ -110,12 +117,36 @@ set smartcase
 inoremap jj <esc>
 " jk to throw you into normal mode from insert mode
 inoremap jk <esc>
+" make j and k work on wrapped lines
+map j gj
+map k gk
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
-imap <up>    <nop>
 map  <down>  <nop>
-imap <down>  <nop>
 map  <left>  <nop>
-imap <left>  <nop>
 map  <right> <nop>
-imap <right> <nop>
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+
+" Splits
+
+" Open new split panes to right and bottom,
+" which feels more natural than Vim’s default
+set splitbelow
+set splitright
+
+
+
+" Plugins
+
+" ctrl-p
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" ag
+set runtimepath^=~/.vim/bundle/ag
