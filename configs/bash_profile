@@ -18,7 +18,3 @@ fi
 
 # Case insensitive tab completition
 bind "set completion-ignore-case on"
-
-# Enable i-search via ctrl+s
-# http://unix.stackexchange.com/questions/39273/how-to-navigate-within-bashs-reverse-search
-# set -ixon
