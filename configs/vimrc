@@ -122,6 +122,9 @@ inoremap jk <esc>
 " make j and k work on wrapped lines
 map j gj
 map k gk
+" reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
 map  <down>  <nop>
