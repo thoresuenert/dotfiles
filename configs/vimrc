@@ -108,6 +108,8 @@ set incsearch
 set ignorecase
 " ...except if we input a capital letter
 set smartcase
+" my preferred explorer list style
+let g:netrw_liststyle=3
 
 
 
