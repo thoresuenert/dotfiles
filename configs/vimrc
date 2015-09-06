@@ -155,3 +155,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " ag
 set runtimepath^=~/.vim/bundle/ag
+
+" vim-surround
+set runtimepath^=~/.vim/bundle/vim-surround

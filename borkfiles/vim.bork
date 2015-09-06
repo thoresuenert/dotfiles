@@ -33,3 +33,12 @@ if [[ ! -d ${HOME}/.vim/bundle/ag ]]; then
 else
 		echo "ok: plugin - ag"
 fi
+
+# surround
+if [[ ! -d ${HOME}/.vim/bundle/vim-surround ]]; then
+		echo "missing: plugin - surround"
+        git clone https://github.com/tpope/vim-surround ${HOME}/.vim/bundle/vim-surround
+		echo "ok: plugin - surround"
+else
+		echo "ok: plugin - surround"
+fi
