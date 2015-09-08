@@ -1,4 +1,5 @@
 # Create required Vim directories
+ok directory $HOME/.vim
 ok directory $HOME/.vim/colors
 
 # get colorschemes
