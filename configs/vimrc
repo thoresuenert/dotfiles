@@ -36,6 +36,7 @@ call togglebg#map("<F12>")
 " Set relevant filetypes
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.html5 set filetype=php
 
 
 
