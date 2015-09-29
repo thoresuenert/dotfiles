@@ -43,3 +43,12 @@ if [[ ! -d ${HOME}/.vim/bundle/vim-surround ]]; then
 else
 		echo "ok: plugin - surround"
 fi
+
+# goyo
+if [[ ! -d ${HOME}/.vim/bundle/goyo.vim ]]; then
+		echo "missing: plugin - goyo"
+        git clone https://github.com/junegunn/goyo.vim ${HOME}/.vim/bundle/goyo.vim
+		echo "ok: plugin - goyo"
+else
+		echo "ok: plugin - goyo"
+fi

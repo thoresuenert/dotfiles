@@ -159,3 +159,6 @@ set runtimepath^=~/.vim/bundle/ag
 
 " vim-surround
 set runtimepath^=~/.vim/bundle/vim-surround
+
+" goyo.vim
+set runtimepath^=~/.vim/bundle/goyo.vim
