@@ -111,6 +111,8 @@ set ignorecase
 set smartcase
 " my preferred explorer list style
 let g:netrw_liststyle=3
+" visual tab-completion in filenames
+set wildmenu
 
 
 
@@ -148,11 +150,10 @@ set splitright
 
 
 
-" Plugins
+" Init Plugins
 
-" ctrl-p
+" CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " ag
 set runtimepath^=~/.vim/bundle/ag
@@ -162,3 +163,9 @@ set runtimepath^=~/.vim/bundle/vim-surround
 
 " goyo.vim
 set runtimepath^=~/.vim/bundle/goyo.vim
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
