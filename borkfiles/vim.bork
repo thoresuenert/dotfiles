@@ -1,5 +1,6 @@
 # Create required Vim directories
 ok directory $HOME/.vim
+ok directory $HOME/.vim/bundle
 ok directory $HOME/.vim/colors
 
 # get colorschemes
@@ -14,41 +15,9 @@ else
 		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
 fi
 
-# install plugins
-destination $HOME/.vim
-
-# ctrl-p
-if [[ ! -d ${HOME}/.vim/bundle/ctrlp.vim ]]; then
-		echo "missing: plugin - ctrl-p"
-        git clone https://github.com/kien/ctrlp.vim.git ${HOME}/.vim/bundle/ctrlp.vim
-		echo "ok: plugin - ctrl-p"
-else
-		echo "ok: plugin - ctrl-p"
-fi
-
-# ag
-if [[ ! -d ${HOME}/.vim/bundle/ag ]]; then
-		echo "missing: plugin - ag"
-        git clone https://github.com/rking/ag.vim ${HOME}/.vim/bundle/ag
-		echo "ok: plugin - ag"
-else
-		echo "ok: plugin - ag"
-fi
-
-# surround
-if [[ ! -d ${HOME}/.vim/bundle/vim-surround ]]; then
-		echo "missing: plugin - surround"
-        git clone https://github.com/tpope/vim-surround ${HOME}/.vim/bundle/vim-surround
-		echo "ok: plugin - surround"
-else
-		echo "ok: plugin - surround"
-fi
-
-# goyo
-if [[ ! -d ${HOME}/.vim/bundle/goyo.vim ]]; then
-		echo "missing: plugin - goyo"
-        git clone https://github.com/junegunn/goyo.vim ${HOME}/.vim/bundle/goyo.vim
-		echo "ok: plugin - goyo"
-else
-		echo "ok: plugin - goyo"
+# get vundle
+destination $HOME/.vim/bundle
+ok github gmarik/Vundle.vim
+if did_update; then
+  (vim +PluginInstall! +qall)
 fi

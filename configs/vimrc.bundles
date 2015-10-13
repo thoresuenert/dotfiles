@@ -1,0 +1,44 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" =============================================================================
+" =============================================================================
+
+" insert mode
+Plugin 'tpope/vim-surround'
+
+" text manipulation
+Plugin 'mattn/emmet-vim'
+
+" navigation
+Plugin 'kien/ctrlp.vim'
+
+" syntax plugins
+
+  " css
+  Plugin 'cakebaker/scss-syntax.vim'
+
+  " javascript / react
+  Plugin 'pangloss/vim-javascript'
+
+  " html / markup / templating
+  Plugin 'mustache/vim-mustache-handlebars'
+
+" misc 
+Plugin 'junegunn/goyo.vim'
+
+" =============================================================================
+" =============================================================================
+
+call vundle#end()            " required
+filetype plugin indent on    " required

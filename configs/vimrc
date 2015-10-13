@@ -1,5 +1,10 @@
 " .vimrc
 
+" load vundle for managing plugin
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
 
 
 set noswapfile
@@ -148,23 +153,8 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-
-
-" Init Plugins
-
-" CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" ag
-set runtimepath^=~/.vim/bundle/ag
-
-" vim-surround
-set runtimepath^=~/.vim/bundle/vim-surround
-
-" goyo.vim
-set runtimepath^=~/.vim/bundle/goyo.vim
-
 " CtrlP settings
+" see http://dougblack.io/words/a-good-vimrc.html
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
