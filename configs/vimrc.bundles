@@ -20,6 +20,9 @@ Plugin 'tpope/vim-surround'
 " text manipulation
 Plugin 'mattn/emmet-vim'
 
+" search
+Plugin 'rking/ag.vim'
+
 " navigation
 Plugin 'kien/ctrlp.vim'
 
