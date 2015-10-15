@@ -30,18 +30,13 @@
 	status = auto
 [format]
 	pretty = oneline
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = vimdiff
 [difftool]
 	prompt = false
-[diff]
-	tool = Kaleidoscope
 [push]
 	default = matching
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+[merge]
+	tool = vimdiff
 [mergetool]
 	prompt = false
-[merge]
-	tool = Kaleidoscope
