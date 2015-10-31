@@ -1,6 +1,9 @@
 # Muscle Memory
 alias c="clear"
 
+# hemingway
+alias hemingway="vim '+Goyo' '+set tw=80' '+set wrap'"
+
 # Git Laziness
 alias ga="git add"
 alias gb="git branches"
