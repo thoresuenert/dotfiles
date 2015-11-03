@@ -2,7 +2,7 @@
 alias c="clear"
 
 # hemingway
-alias hemingway="vim '+Goyo' '+set tw=80' '+set wrap'"
+alias hemingway="vim '+Goyo' '+set tw=80' '+set ft=markdown' '+set wrap' '+set linebreak'"
 
 # Git Laziness
 alias ga="git add"
