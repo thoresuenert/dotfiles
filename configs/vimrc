@@ -37,7 +37,6 @@ colorscheme solarized
 call togglebg#map("<F12>")              " toggle solarized mode (light/dark)
 
 " searching
-set hlsearch                            " highlight search results
 set incsearch                           " highlight while typing
 set ignorecase                          " Ignore case when searching...
 set smartcase                           " except if we input a capital letter
