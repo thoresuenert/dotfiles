@@ -1,8 +1,8 @@
 set nocompatible
 let mapleader = " "
 
-syntax enable                             " enable syntax highighting
-filetype plugin on                        " detect filetype
+syntax enable                           " enable syntax highighting
+filetype plugin on                      " detect filetype
 
 " load vundle for managing plugin
 if filereadable(expand("~/.vimrc.bundles"))
@@ -14,7 +14,7 @@ endif
 " =============================================================================
 set noswapfile
 set encoding=utf-8
-set clipboard=unnamed                     " use OS X clipboard 
+set clipboard=unnamed                   " use OS X clipboard 
 set backspace=indent,eol,start
 
 " =============================================================================
@@ -85,8 +85,8 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-set shiftround                   " round indent to nearest multiple of 2
-set nowrap                       " no line-wrapping
+set shiftround                        " round indent to nearest multiple of 2
+set nowrap                            " no line-wrapping
 
 " =============================================================================
 " Searching in Files with the Silver Searcher 
