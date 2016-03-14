@@ -1,6 +1,7 @@
 # Create required Vim directories
 ok directory $HOME/.vim
 ok directory $HOME/.vim/bundle
+ok directory $HOME/.vim/undodir
 ok directory $HOME/.vim/colors
 
 # get colorschemes
