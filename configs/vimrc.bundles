@@ -34,6 +34,7 @@ Plugin 'kien/ctrlp.vim'
 
   " javascript / react
   Plugin 'pangloss/vim-javascript'
+  Plugin 'mxw/vim-jsx'
 
   " html / markup / templating
   Plugin 'mustache/vim-mustache-handlebars'
