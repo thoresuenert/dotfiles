@@ -111,26 +111,37 @@ set iskeyword-=_                      " underscores denote words
 " =============================================================================
 " bind K to search for word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " jj to throw you into normal mode from insert mode
 inoremap jj <esc>
+
 " jk to throw you into normal mode from insert mode
 inoremap jk <esc>
+
 " make j and k work on wrapped lines
 map j gj
 map k gk
+
 " reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
 " Disable arrow keys (hardcore)
 map  <up>    <nop>
 map  <down>  <nop>
 map  <left>  <nop>
 map  <right> <nop>
+
 " Easier split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"from :help Y:
+"If you like Y to work from the cursor to the end of line 
+"(which is more logical, but not Vi-compatible) use
+map Y y$
 
 " =============================================================================
 " plugin settings 
