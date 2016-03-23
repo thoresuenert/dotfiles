@@ -126,11 +126,11 @@ map k gk
 vnoremap < <gv
 vnoremap > >gv
 
-" Disable arrow keys (hardcore)
-map  <up>    <nop>
-map  <down>  <nop>
-map  <left>  <nop>
-map  <right> <nop>
+" Make arrow keys do something useful
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR>
 
 " Easier split navigation
 nnoremap <C-J> <C-W><C-J>
