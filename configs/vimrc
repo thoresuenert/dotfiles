@@ -156,7 +156,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " emmet
 let g:user_emmet_expandabbr_key = '<C-B>'
 let g:user_emmet_install_global = 0
-autocmd FileType html,html5,css,scss EmmetInstall
+autocmd FileType html,html5,css,scss,sass EmmetInstall
 "
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
