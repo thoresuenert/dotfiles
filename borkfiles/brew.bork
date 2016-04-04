@@ -14,6 +14,7 @@ ok brew wget
 ok brew pv
 ok brew python
 ok brew tmux
+ok brew reattach-to-user-namespace
 ok brew mysql
 
 # Cleanup
