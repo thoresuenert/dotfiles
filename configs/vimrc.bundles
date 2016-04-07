@@ -25,6 +25,7 @@ Plugin 'terryma/vim-multiple-cursors'
 
 " search
 Plugin 'rking/ag.vim'
+Plugin 'justinmk/vim-sneak'
 
 " navigation
 Plugin 'kien/ctrlp.vim'
