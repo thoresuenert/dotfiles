@@ -35,7 +35,7 @@ let g:netrw_liststyle=3                 " my preferred explorer list style
 
 " colorscheme
 set background=dark
-colorscheme solarized
+colorscheme base16-eighties
 call togglebg#map("<F12>")              " toggle solarized mode (light/dark)
 
 " searching
