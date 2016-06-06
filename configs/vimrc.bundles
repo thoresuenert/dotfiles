@@ -44,6 +44,8 @@ Plugin 'kien/ctrlp.vim'
 
 " misc 
 Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 
 " =============================================================================
 " =============================================================================
