@@ -16,8 +16,6 @@ set noswapfile
 set encoding=utf-8
 set clipboard=unnamed                   " use OS X clipboard 
 set backspace=indent,eol,start
-set undofile                            " keep undo history after closing file
-set undodir=$HOME/.vim/undodir
 
 " =============================================================================
 "  UI
