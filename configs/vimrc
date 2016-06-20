@@ -110,6 +110,11 @@ set iskeyword-=_                      " underscores denote words
 " bind K to search for word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" use // to search for (visually) selected text under cursor
+" I use this mainly because * and # don't work on words with
+" limitations such as "-" or "_" (afaik)
+vnoremap // y/<C-R>"<CR>
+
 " jj to throw you into normal mode from insert mode
 inoremap jj <esc>
 
