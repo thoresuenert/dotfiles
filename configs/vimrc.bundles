@@ -9,7 +9,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " =============================================================================
 " =============================================================================
@@ -28,19 +28,15 @@ Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 
 " navigation
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " syntax plugins
 
   " css
   Plugin 'cakebaker/scss-syntax.vim'
 
-  " javascript / react
+  " javascript
   Plugin 'pangloss/vim-javascript'
-  Plugin 'mxw/vim-jsx'
-
-  " html / markup / templating
-  Plugin 'mustache/vim-mustache-handlebars'
 
 " misc 
 Plugin 'junegunn/goyo.vim'

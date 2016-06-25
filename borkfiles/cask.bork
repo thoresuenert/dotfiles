@@ -6,23 +6,14 @@ bake brew tap caskroom/versions 2>/dev/null
 ok brew brew-cask
 
 # Install desktop apps
-ok cask 1password
-ok cask alfred
 ok cask appcleaner
-ok cask atom
-ok cask bartender
-ok cask dropbox
 ok cask flux
-ok cask google-chrome
 ok cask keka
 ok cask licecap
 ok cask numi
 ok cask nvalt
 ok cask sequel-pro
 ok cask spectacle
-ok cask vagrant
-ok cask vagrant-manager
-ok cask virtualbox
 ok cask vlc
 
 # Quick Look plugins - https://github.com/sindresorhus/quick-look-plugins

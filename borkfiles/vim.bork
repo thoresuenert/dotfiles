@@ -1,24 +1,11 @@
 # Create required Vim directories
 ok directory $HOME/.vim
 ok directory $HOME/.vim/bundle
-ok directory $HOME/.vim/undodir
 ok directory $HOME/.vim/colors
-
-# get colorschemes
-destination $HOME/.vim/colors
-
-# Check if solarized colorscheme exists
-if [[ ! -f ${HOME}/.vim/colors/solarized.vim ]]; then
-		echo "missing: colorscheme solarized ~/.vim/colors/solarized.vim"
-		wget https://raw.githubusercontent.com/altercation/solarized/master/vim-colors-solarized/colors/solarized.vim -O ${HOME}/.vim/colors/solarized.vim
-		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
-else
-		echo "ok: colorscheme solarized ~/.vim/colors/solarized.vim"
-fi
 
 # get vundle
 destination $HOME/.vim/bundle
-ok github gmarik/Vundle.vim
+ok github VundleVim/Vundle.vim
 if did_update; then
   (vim +PluginInstall! +qall)
 fi

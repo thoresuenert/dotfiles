@@ -8,7 +8,6 @@ bake brew tap homebrew/dupes 2>/dev/null
 ok brew git
 ok brew bash-completion
 ok brew ag
-ok brew node
 ok brew vim
 ok brew wget
 ok brew pv

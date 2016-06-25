@@ -3,22 +3,10 @@ destination $HOME/.dotfiles
 # Update Bork
 ok github mattly/bork
 
-# All UNIXes
+# borkfiles
 include configs.bork
-
-# OS specfic
-case $OSTYPE in
-  darwin*)
-    include brew.bork
-    include cask.bork
-    include macstore.bork
-    include osx.bork
-    include atom.bork
-    ;;
-  linux*)
-    include apt.bork
-esac
-
-# Depending on above
+include brew.bork
+include cask.bork
+include osx.bork
 include npm.bork
 include vim.bork
