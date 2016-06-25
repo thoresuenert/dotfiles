@@ -51,24 +51,12 @@ Explanation of the directories:
 ./configs
 └── Contains all of your configuration files which gets symlinked into $HOME
     as ".$FILE". So basically, your actual dotfiles (vimrc, gitconfig, etc)
-
-./configs/bash_vault
-└── Secret stuff that you rather don't track in the git repo
-
-./hostnames
-└── This folder could contain hostname specific (per host) dotfiles which get
-    sourced by your Bash/ZSH shell only if there is a file that matches our
-    current full (`$HOSTNAME`) hostname.
-
-./opt
-└── Specific files which gets symlinked into non-$HOME folders. Used by
-    atom.bork
 ```
 
 ### Credits
 
 * [Kasperisager](https://github.com/kasperisager), for the idea with Bork
-* [FRDMN](https://github.com/frdmn), for making me do this shit! <3
+* [FRDMN](https://github.com/frdmn), for making me do this! <3
 
 ### License
 
