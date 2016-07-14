@@ -169,3 +169,7 @@ endif
 " vim-sneak
 " enable (smart) streak-mode
 let g:sneak#streak = 1
+
+" multiple-cursor
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
