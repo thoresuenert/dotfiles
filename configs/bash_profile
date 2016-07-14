@@ -18,3 +18,5 @@ fi
 
 # Case insensitive tab completition
 bind "set completion-ignore-case on"
+
+export PATH="/Users/johannes/.composer/vendor/bin:$PATH"
