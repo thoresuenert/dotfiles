@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'altercation/vim-colors-solarized'
 
+" editorconfig
+Plugin 'editorconfig/editorconfig-vim'
+
 " insert mode
 Plugin 'tpope/vim-surround'
 
