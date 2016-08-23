@@ -41,4 +41,4 @@ git_prompt ()
     echo ":$git_color$GIT_BRANCH$c_reset"
 }
 
-PROMPT_COMMAND="PS1=\"${c_path}\w${c_reset}\$(git_prompt) \" ;"
+PROMPT_COMMAND="PS1=\"${c_path}\w${c_reset}\$(git_prompt) \n$ \" ;"
