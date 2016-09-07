@@ -9,6 +9,11 @@ alias ga="git add"
 alias gb="git branches"
 alias gr="git remotes"
 alias gs="git status"
+# push a local branch to the staging production system
+# takes two arguments
+# $1 is the remote (e.g. 'origin') 
+# $2 is the local branch (e.g. 'maint')
+alias stage='function _stage(){ git push -f $1 $2:staging; };_stage'
 
 # Safety First
 alias rm="rm -i"
