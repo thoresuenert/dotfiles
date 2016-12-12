@@ -7,6 +7,7 @@ ok brew brew-cask
 
 # Install desktop apps
 ok cask 1password
+ok cask alfred
 ok cask appcleaner
 ok cask dash 
 ok cask dropbox
