@@ -6,24 +6,27 @@ bake brew tap caskroom/versions 2>/dev/null
 ok brew brew-cask
 
 # Install desktop apps
+ok cask 1password
 ok cask appcleaner
+ok cask dash 
 ok cask dropbox
 ok cask firefox
 ok cask flux
 ok cask google-chrome
-ok cask google-chrome-canary
-ok cask karabiner
-ok cask keepingyouawake
+ok cask google-drive
+ok cask grandtotal
 ok cask keka
 ok cask licecap
-ok cask numi
-ok cask nvalt
+ok cask moneymoney
+ok cask phpstorm
 ok cask postman
 ok cask sequel-pro
+ok cask sketch
 ok cask slack
 ok cask spectacle
-ok cask telegram
+ok cask umsatz
 ok cask vlc
+
 
 # Cleanup
 bake "brew cleanup >/dev/null && echo ok: brew cleanup || echo error: brew cleanup => run 'brew cleanup' for stdout and stderr"

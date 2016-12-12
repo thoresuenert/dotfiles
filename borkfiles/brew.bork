@@ -3,22 +3,24 @@ ok brew
 
 # Taps
 bake brew tap homebrew/dupes 2>/dev/null
+bake brew tap homebrew/versions 2>/dev/null
+bake brew tap homebrew/homebrew-php 2>/dev/null
+bake brew tap ravenac95/sudolikeaboss 2>/dev/null
 
 # Install formula
 ok brew bash-completion
-ok brew git
 ok brew fzf
+ok brew git
 ok brew mailhog
 ok brew mariadb
-ok brew php70
+ok brew php71
 ok brew pv
 ok brew python
-ok brew reattach-to-user-namespace
 ok brew ripgrep
-ok brew tmux
+ok brew sudolikeaboss
 ok brew vim
 ok brew wget
-ok brew youtube-dl
+
 
 # Cleanup
 bake brew cleanup

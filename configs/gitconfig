@@ -1,29 +1,9 @@
-[alias]
-	# Pretty logs
-  l = log --pretty=oneline -n 40 --graph
-  ll = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	a = add
-  # show FullCommitMessage for specific commit
-  fcm = log --format=%B -n 1
-	co = commit -m
-	m = merge --no-ff
-	# cmd + c, cmd + v from https://github.com/mathiasbynens/dotfiles
-	# View the current working tree status using the short format
-	s = status -sb
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch -a -v
-	remotes = remote -v
-	# Undo a `git push`
-	undopush = push -f origin HEAD^:master
-	oops = commit --amend
-  pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 [user]
-  name = Johannes Rückert
-  email = rawbauke@gmail.com
+  name = Thore Sünert
+  email = mail@thoresuenert.de
 [core]
 	quotepath = false
-	excludesfile = /Users/johannes/.gitignore
+	excludesfile = /Users/thore/.gitignore
 [color]
 	ui = true
 	branch = auto
@@ -32,13 +12,9 @@
 	status = auto
 [format]
 	pretty = oneline
-[diff]
-	tool = vimdiff
 [difftool]
 	prompt = false
 [push]
 	default = matching
-[merge]
-	tool = vimdiff
 [mergetool]
 	prompt = false

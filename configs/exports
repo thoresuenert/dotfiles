@@ -1,5 +1,8 @@
 # cmd+c cmd+v from https://github.com/mathiasbynens/dotfiles
 
+#base PATH for export
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Make vim the default editor
 export EDITOR="vim"
 
