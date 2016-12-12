@@ -5,15 +5,20 @@ ok brew
 bake brew tap homebrew/dupes 2>/dev/null
 
 # Install formula
-ok brew git
 ok brew bash-completion
-ok brew ag
-ok brew vim
-ok brew wget
+ok brew git
+ok brew fzf
+ok brew mailhog
+ok brew mariadb
+ok brew php70
 ok brew pv
 ok brew python
-ok brew tmux
 ok brew reattach-to-user-namespace
+ok brew ripgrep
+ok brew tmux
+ok brew vim
+ok brew wget
+ok brew youtube-dl
 
 # Cleanup
 bake brew cleanup

@@ -3,3 +3,15 @@ alias bork="${HOME}/.dotfiles/bork/bin/bork"
 function dotfiles() {
 	cd ~/.dotfiles; ./dotfiles $1; cd - > /dev/null
 }
+
+# improved man
+function superman() {
+  vim "+Man $1" "+res100"
+}
+alias superman=superman
+
+# show current battery level
+function pppower() {
+  pmset -g batt | grep --color=never % | awk '{print $2}'
+}
+alias pppower=pppower

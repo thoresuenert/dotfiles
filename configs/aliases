@@ -46,5 +46,19 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall F
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-#php related
+# php related
 alias phpunit="vendor/bin/phpunit"
+
+# grab inuit template file
+# takes two arguments
+# $1 = layer (e.g. 'components')
+# $2 = file (e.g. 'button')
+function inuitnew(){
+  wget git.io/inuitcssnew -O _$1.$2.scss
+}
+
+# edit the private.xml file for karabiner
+alias private.xml="vim $HOME/Library/Application\ Support/Karabiner/private.xml"
+
+# nvALT vim access
+alias nv="cd $HOME/Library/Application\ Support/Notational\ Data/ && vim"

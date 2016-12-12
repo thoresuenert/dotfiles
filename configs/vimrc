@@ -16,13 +16,13 @@ set noswapfile
 set encoding=utf-8
 set clipboard=unnamed                   " use OS X clipboard 
 set backspace=indent,eol,start
+"set path+=node_modules/inuitcss
 
 " =============================================================================
 "  UI
 " =============================================================================
 set shortmess+=I                        " disable splash screen
 set showmode                            " show current mode
-set title                               " show file title in terminal tab
 set cursorline                          " highlight current line
 set laststatus=2                        " always show status line
 set showcmd                             " show what commands you’re typing
@@ -30,11 +30,31 @@ set ruler                               " show current line and position
 set wildmenu                            " visual tab-completion in statusline
 set t_Co=256                            " 256 colours, please
 let g:netrw_liststyle=3                 " my preferred explorer list style
+let g:netrw_banner=0                    " no banner
+let g:netrw_altv=1                      " open files to the right
+let g:netrw_preview=1                   " open previews vertically
+let g:netrw_alto=0                      " ... and to the right
+let g:netrw_bufsettings='noma nomod nonu nobl nowrap ro rnu'
 
-" colorscheme
+
+" colorschemes
+" EIGHTIES
+" set background=dark
+" colorscheme base16-eighties
+
+" OCEAN
+" set background=dark
+" colorscheme base16-ocean
+
+" HYBRID
 set background=dark
-colorscheme base16-eighties
-call togglebg#map("<F12>")              " toggle solarized mode (light/dark)
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1       " Remove this line if using the default palette.
+colorscheme hybrid
+
+" SEOUL256
+" set background=dark
+" colorscheme seoul256
 
 " searching
 set incsearch                           " highlight while typing
@@ -45,17 +65,7 @@ set smartcase                           " except if we input a capital letter
 set splitright                          " Open new split panes to right...
 set splitbelow											    " ...and bottom
 
-" Set relative line numbers if we can...
-if exists("+relativenumber")
-    " Due to a problem with relative line numbers not persisting across new
-    " tabs and splits, set no line numbers at all...
-    set nonumber
-    " ..then set relative ones.
-    set relativenumber
-" ...otherwise let’s just have regular ones.
-else
-    set number
-endif
+set relativenumber
 
 " =============================================================================
 " Autocommand groups 
@@ -75,6 +85,7 @@ augroup vimrcEx
   au BufNewFile,BufRead *.md set filetype=markdown 
   au BufNewFile,BufRead *.json set filetype=javascript
 	au BufRead,BufNewFile *.html5 set filetype=php
+	au BufRead,BufNewFile *.twig set filetype=jinja
 
 augroup END
 
@@ -110,14 +121,6 @@ set iskeyword-=_                      " underscores denote words
 " bind K to search for word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" use // to search for (visually) selected text under cursor
-" I use this mainly because * and # don't work on words with
-" limitations such as "-" or "_" (afaik)
-vnoremap // y/<C-R>"<CR>
-
-" jj to throw you into normal mode from insert mode
-inoremap jj <esc>
-
 " jk to throw you into normal mode from insert mode
 inoremap jk <esc>
 
@@ -149,22 +152,42 @@ map Y y$
 " =============================================================================
 " plugin settings 
 " =============================================================================
-" CtrlP 
-" see http://dougblack.io/words/a-good-vimrc.html
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_user_command = 'ag %s -l -U --nocolor -g ""'
+" FZF
+" https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.87y4ltihr
+" CONFIG REFERENCE
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+
+nnoremap <c-p> :FZF<cr>
+set grepprg=rg\ --vimgrep
+
+" Default FZF layout
+" - down / up / left / right
+
+let g:fzf_layout = { 'down': '~40%' }
+let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!dist/*" --glob "!tmp/*" --glob "!node_modules/*" --glob "!bower_components/*"'
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!dist/*" --glob "!tmp/*" --glob "!node_modules/*" --glob "!bower_components" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 " emmet
 let g:user_emmet_expandabbr_key = '<C-B>'
 let g:user_emmet_install_global = 0
-autocmd FileType html,html5,css,scss,sass EmmetInstall
+autocmd FileType php,html,html5,html.handlebars,css,scss,sass,javascript EmmetInstall
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
+
+" make it possible to read man pages within vim using the :Man command
+runtime! ftplugin/man.vim
 
 " vim-sneak
 " enable (smart) streak-mode
@@ -173,3 +196,26 @@ let g:sneak#streak = 1
 " multiple-cursor
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
+
+" http://vi.stackexchange.com/questions/3364/open-filename-under-cursor-like-gf-but-in-a-new-tab-or-split
+nnoremap <C-W><C-F> <C-W>vgf
+
+" last pasted text
+nnoremap gp `[v`]
+
+" Movement in insert mode
+" :h i_CTRL-\_CTRL-O <- this doesn't move the cursor on first usage
+" compared to i_CTRL-O alone
+inoremap <C-h> <C-\><C-o>h
+inoremap <C-l> <C-\><C-o>a
+inoremap <C-j> <C-\><C-o>j
+inoremap <C-k> <C-\><C-o>k
+inoremap <C-^> <C-o><C-^>
+
+" Indent Lines Plugin
+let g:indentLine_enabled = 0                   " disabled by default
+nnoremap <Leader>i :IndentLinesToggle<CR>
+
+
+" Show Buffers with FZF
+nnoremap <Leader>b :Buffers<CR>

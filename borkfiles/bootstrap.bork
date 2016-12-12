@@ -7,6 +7,4 @@ ok github mattly/bork
 include configs.bork
 include brew.bork
 include cask.bork
-include osx.bork
-include npm.bork
 include vim.bork

@@ -7,25 +7,23 @@ ok brew brew-cask
 
 # Install desktop apps
 ok cask appcleaner
+ok cask dropbox
+ok cask firefox
 ok cask flux
+ok cask google-chrome
+ok cask google-chrome-canary
+ok cask karabiner
+ok cask keepingyouawake
 ok cask keka
 ok cask licecap
 ok cask numi
 ok cask nvalt
+ok cask postman
 ok cask sequel-pro
+ok cask slack
 ok cask spectacle
+ok cask telegram
 ok cask vlc
-
-# Quick Look plugins - https://github.com/sindresorhus/quick-look-plugins
-ok cask qlcolorcode
-ok cask qlstephen
-ok cask qlimagesize
-ok cask qlmarkdown
-ok cask quicklook-json
-ok cask qlprettypatch
-ok cask quicklook-csv
-ok cask betterzipql
-ok cask suspicious-package
 
 # Cleanup
 bake "brew cleanup >/dev/null && echo ok: brew cleanup || echo error: brew cleanup => run 'brew cleanup' for stdout and stderr"
