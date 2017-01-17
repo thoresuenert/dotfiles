@@ -13,8 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " =============================================================================
 " =============================================================================
-" coloschme
-Plugin  'endel/vim-github-colorscheme'     
+" colorschema
+Plugin 'endel/vim-github-colorscheme'
 
 " editorconfig
 Plugin 'editorconfig/editorconfig-vim'
