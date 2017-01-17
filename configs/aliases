@@ -4,29 +4,29 @@
 alias cl="clear"
 
 # Git Laziness
-alias ga="git add"
-alias gb="git branches"
-alias gr="git remotes"
-alias gst="git status"
+#alias ga="git add"
+#alias gb="git branches"
+#alias gr="git remotes"
+#alias gst="git status"
 
 # Pretty logs
 alias gl="git log --pretty=oneline -n 40 --graph"
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 # show FullCommitMessage for specific commit
-alias gfcm="git log --format=%B -n 1"
-alias gco="git commit -m"
-alias gm="git merge --no-ff"
+#alias gfcm="git log --format=%B -n 1"
+#alias gco="git commit -m"
+#alias gm="git merge --no-ff"
 
 # Show verbose output about tags, branches or remotes
-alias gtags="git tag -l"
-alias gbranches="git branch -a -v"
-alias gremotes="git remote -v"
+#alias gtags="git tag -l"
+#alias gbranches="git branch -a -v"
+#alias gremotes="git remote -v"
 
 # Undo a `git push`
-alias gundopush="git push -f origin HEAD^:master"
-alias goops="git commit --amend"
-alias gpu="git !"git fetch origin -v; git fetch upstream -v; git merge upstream/master""
+#alias gundopush="git push -f origin HEAD^:master"
+#alias goops="git commit --amend"
+#alias gpu="git !"git fetch origin -v; git fetch upstream -v; git merge upstream/master""
 
 # Safety First
 alias rm="rm -i"

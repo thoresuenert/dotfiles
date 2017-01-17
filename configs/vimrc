@@ -1,0 +1,234 @@
+" sensible.vim - Defaults everyone can agree on
+" Maintainer:   Tim Pope <http://tpo.pe/>
+" Version:      1.1
+
+" load vundle for managing plugin
+if filereadable(expand("~/.vimrc.bundles"))
+ source ~/.vimrc.bundles
+endif
+if exists('g:loaded_sensible') || &compatible
+  finish
+else
+  let g:loaded_sensible = 1
+endif
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" Use :help 'option' to see the documentation for the given option.
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+
+set nrformats-=octal
+
+set ttimeout
+set ttimeoutlen=100
+
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+set laststatus=2
+set ruler
+set wildmenu
+
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
+
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
+
+if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
+  set shell=/bin/bash
+endif
+
+set autoread
+
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+set sessionoptions-=options
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
+endif
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+inoremap <C-U> <C-G>u<C-U>
+
+" vim:set ft=vim et sw=2:
+"================================
+" Own configurations
+" ============================
+
+set clipboard=unnamed
+
+" =============================================================================
+" "  UI
+" "
+" =============================================================================
+set background=light
+colorscheme github
+set shortmess+=I                        " disable splash screen
+set showmode                            " show current mode
+set cursorline                          " highlight current line
+set laststatus=2                        " always show status line
+set showcmd                             " show what commands you’re typing
+set ruler                               " show current line and position
+set wildmenu                            " visual tab-completion in statusline
+set t_Co=256                            " 256 colours, please
+let g:netrw_liststyle=3                 " my preferred explorer list style
+let g:netrw_banner=0                    " no banner
+let g:netrw_altv=1                      " open files to the right
+let g:netrw_preview=1                   " open previews vertically
+let g:netrw_alto=0                      " ... and to the right
+let g:netrw_bufsettings='noma nomod nonu nobl nowrap ro rnu'
+" searching
+set incsearch                           " highlight while typing
+set ignorecase                          " Ignore case when searching...
+set smartcase                           " except if we input a capital letter
+
+" splits
+set splitright                          " Open new split panes to right...
+set splitbelow											    " ...and bottom
+
+set relativenumber
+set number
+
+" =============================================================================
+"  text formatting
+" =============================================================================
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set shiftround                        " round indent to nearest multiple of 2
+set nowrap                            " no line-wrapping
+
+" =============================================================================
+"  key mappings
+" =============================================================================
+
+" make j and k work on wrapped lines
+map j gj
+map k gk
+
+" reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Make arrow keys do something useful
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR>
+
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"from :help Y:
+"If you like Y to work from the cursor to the end of line 
+"(which is more logical, but not Vi-compatible) use
+map Y y$
+
+" =============================================================================
+" plugin settings 
+" =============================================================================
+" FZF
+" https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.87y4ltihr
+" CONFIG REFERENCE
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+
+nnoremap <c-p> :FZF<cr>
+set grepprg=rg\ --vimgrep
+
+" Default FZF layout
+" - down / up / left / right
+
+let g:fzf_layout = { 'down': '~40%' }
+let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!dist/*" --glob "!tmp/*" --glob "!node_modules/*" --glob "!bower_components/*"'
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!dist/*" --glob "!tmp/*" --glob "!node_modules/*" --glob "!bower_components" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+" emmet
+let g:user_emmet_expandabbr_key = '<Tab>'
+let g:user_emmet_install_global = 0
+autocmd FileType php,html,html5,html.handlebars,css,scss,sass,javascript EmmetInstall
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+" multiple-cursor
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
+
+
+" last pasted text
+nnoremap gp `[v`]
+
+" Movement in insert mode
+" :h i_CTRL-\_CTRL-O <- this doesn't move the cursor on first usage
+" compared to i_CTRL-O alone
+inoremap <C-h> <C-\><C-o>h
+inoremap <C-l> <C-\><C-o>a
+inoremap <C-j> <C-\><C-o>j
+inoremap <C-k> <C-\><C-o>k
+inoremap <C-^> <C-o><C-^>
+
+" Indent Lines Plugin
+let g:indentLine_enabled = 0                   " disabled by default
+nnoremap <Leader>i :IndentLinesToggle<CR>
+
+
+" Show Buffers with FZF
+nnoremap <Leader>b :Buffers<CR>

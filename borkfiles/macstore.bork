@@ -1,4 +1,7 @@
 # Install Appstore Apps
-ok macstore Xcode 497799835
-ok macstore Tweetbot 557168941
-ok macstore "iA Writer" 775737590
+# xcode
+ok mas 497799835
+# tweetbot
+ok mas 557168941
+# ia write
+ok mas 775737590 

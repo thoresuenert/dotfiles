@@ -20,7 +20,8 @@ ok brew ripgrep
 ok brew sudolikeaboss
 ok brew vim
 ok brew wget
-
+ok brew Caskroom/versions/iterm2-nightly
+ok brew mas
 
 # Cleanup
 bake brew cleanup

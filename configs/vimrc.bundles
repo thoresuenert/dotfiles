@@ -1,0 +1,59 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" =============================================================================
+" =============================================================================
+" coloschme
+Plugin  'endel/vim-github-colorscheme'     
+
+" editorconfig
+Plugin 'editorconfig/editorconfig-vim'
+
+" insert mode
+Plugin 'tpope/vim-surround'
+
+" text manipulation
+Plugin 'mattn/emmet-vim'
+Plugin 'terryma/vim-multiple-cursors'
+
+" navigation
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+" syntax plugins
+
+  " php
+  Plugin 'vim-scripts/php.vim-html-enhanced'
+
+  " css
+  Plugin 'cakebaker/scss-syntax.vim'
+
+  " javascript
+  Plugin 'pangloss/vim-javascript'
+  
+  " blade
+  Plugin 'jwalton512/vim-blade'
+
+  " handlebars
+  Plugin 'mustache/vim-mustache-handlebars'
+
+" misc 
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
+
+" =============================================================================
+" =============================================================================
+
+call vundle#end()            " required
+filetype plugin indent on    " required
