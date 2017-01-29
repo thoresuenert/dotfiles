@@ -32,9 +32,13 @@ Plugin 'junegunn/fzf.vim'
 
 " syntax plugins
 
-  " php
-  Plugin 'vim-scripts/php.vim-html-enhanced'
 
+  " php
+  Plugin 'StanAngeloff/php.vim'
+  Plugin 'arnaud-lb/vim-php-namespace'
+  " php completion
+  Plugin 'shawncplus/phpcomplete.vim'
+  Plugin 'ludovicchabant/vim-gutentags'
   " css
   Plugin 'cakebaker/scss-syntax.vim'
 

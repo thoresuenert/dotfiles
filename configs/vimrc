@@ -1,3 +1,4 @@
+set nocompatible
 " sensible.vim - Defaults everyone can agree on
 " Maintainer:   Tim Pope <http://tpo.pe/>
 " Version:      1.1
@@ -97,9 +98,13 @@ inoremap <C-U> <C-G>u<C-U>
 "================================
 " Own configurations
 " ============================
-
+let mapleader = " "
 set clipboard=unnamed
-
+set noswapfile
+" last pasted text
+nnoremap gp `[v`]
+" edit power of world
+nmap <Leader>ev :e $MYVIMRC<cr>
 " =============================================================================
 " "  UI
 " "
@@ -225,10 +230,41 @@ inoremap <C-j> <C-\><C-o>j
 inoremap <C-k> <C-\><C-o>k
 inoremap <C-^> <C-o><C-^>
 
-" Indent Lines Plugin
-let g:indentLine_enabled = 0                   " disabled by default
-nnoremap <Leader>i :IndentLinesToggle<CR>
-
-
 " Show Buffers with FZF
 nnoremap <Leader>b :Buffers<CR>
+
+" PHP Namespace Settings
+function! IPhpInsertUse()
+  call PhpInsertUse()
+  call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+function! IPhpExpandClass()
+  call PhpExpandClass()
+  call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+
+autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
+let g:php_namespace_sort_after_insert = 1
+
+" Put at the very end of your .vimrc file.
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+" Php autocomplete 
+" bind omnicomplete to tab 
+inoremap <Tab> <C-x><C-o>
